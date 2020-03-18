@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0842DA03F824090705853790 /* Pods_plcrashreporterusage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C664F921609DFAA3E33E184B /* Pods_plcrashreporterusage.framework */; };
 		8AF0930724228614008893DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF0930624228614008893DB /* AppDelegate.swift */; };
 		8AF0930924228614008893DB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF0930824228614008893DB /* SceneDelegate.swift */; };
 		8AF0930B24228614008893DB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF0930A24228614008893DB /* ContentView.swift */; };
@@ -16,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E834EA950961B866A06750A /* Pods-plcrashreporterusage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-plcrashreporterusage.debug.xcconfig"; path = "Target Support Files/Pods-plcrashreporterusage/Pods-plcrashreporterusage.debug.xcconfig"; sourceTree = "<group>"; };
+		8AC0F0DE242287F800C19240 /* plcrashreporterusage-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "plcrashreporterusage-Bridging-Header.h"; sourceTree = "<group>"; };
 		8AF0930324228614008893DB /* plcrashreporterusage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = plcrashreporterusage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AF0930624228614008893DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8AF0930824228614008893DB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +27,8 @@
 		8AF0930F24228616008893DB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8AF0931224228616008893DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8AF0931424228616008893DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B580F57A4596F358EDE4DE80 /* Pods-plcrashreporterusage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-plcrashreporterusage.release.xcconfig"; path = "Target Support Files/Pods-plcrashreporterusage/Pods-plcrashreporterusage.release.xcconfig"; sourceTree = "<group>"; };
+		C664F921609DFAA3E33E184B /* Pods_plcrashreporterusage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_plcrashreporterusage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +36,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0842DA03F824090705853790 /* Pods_plcrashreporterusage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		14C4DC359458B32BC4528EAA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2E834EA950961B866A06750A /* Pods-plcrashreporterusage.debug.xcconfig */,
+				B580F57A4596F358EDE4DE80 /* Pods-plcrashreporterusage.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		6DEA7F47A88751D348EC1D36 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C664F921609DFAA3E33E184B /* Pods_plcrashreporterusage.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8AF092FA24228614008893DB = {
 			isa = PBXGroup;
 			children = (
 				8AF0930524228614008893DB /* plcrashreporterusage */,
 				8AF0930424228614008893DB /* Products */,
+				14C4DC359458B32BC4528EAA /* Pods */,
+				6DEA7F47A88751D348EC1D36 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,6 +88,7 @@
 				8AF0931124228616008893DB /* LaunchScreen.storyboard */,
 				8AF0931424228616008893DB /* Info.plist */,
 				8AF0930E24228616008893DB /* Preview Content */,
+				8AC0F0DE242287F800C19240 /* plcrashreporterusage-Bridging-Header.h */,
 			);
 			path = plcrashreporterusage;
 			sourceTree = "<group>";
@@ -82,6 +108,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8AF0931724228616008893DB /* Build configuration list for PBXNativeTarget "plcrashreporterusage" */;
 			buildPhases = (
+				7A043DC845152ABFB52FE34D /* [CP] Check Pods Manifest.lock */,
 				8AF092FF24228614008893DB /* Sources */,
 				8AF0930024228614008893DB /* Frameworks */,
 				8AF0930124228614008893DB /* Resources */,
@@ -107,6 +134,7 @@
 				TargetAttributes = {
 					8AF0930224228614008893DB = {
 						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1130;
 					};
 				};
 			};
@@ -140,6 +168,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7A043DC845152ABFB52FE34D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-plcrashreporterusage-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8AF092FF24228614008893DB /* Sources */ = {
@@ -282,8 +335,10 @@
 		};
 		8AF0931824228616008893DB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E834EA950961B866A06750A /* Pods-plcrashreporterusage.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"plcrashreporterusage/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
@@ -294,6 +349,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = us.eidinger.plcrashreporterusage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "plcrashreporterusage/plcrashreporterusage-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -301,8 +358,10 @@
 		};
 		8AF0931924228616008893DB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B580F57A4596F358EDE4DE80 /* Pods-plcrashreporterusage.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"plcrashreporterusage/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
@@ -313,6 +372,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = us.eidinger.plcrashreporterusage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "plcrashreporterusage/plcrashreporterusage-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

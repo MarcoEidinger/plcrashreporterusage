@@ -10,7 +10,11 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, World!")
+        Button(action: {
+            fatalError("Generated crash for testing")
+        }) {
+            Text("Generate Crash")
+        }
     }
 }
 
