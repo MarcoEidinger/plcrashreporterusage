@@ -7,15 +7,33 @@
 //
 
 import SwiftUI
+import MessageUI
 
 struct ContentView: View {
-    var body: some View {
-        Button(action: {
-            fatalError("Generated crash for testing")
-        }) {
-            Text("Generate Crash")
+
+    @State var result: Result<MFMailComposeResult, Error>? = nil
+    @State var isShowingMailView = false
+
+     var body: some View {
+        VStack {
+            Button(action: {
+                fatalError("Generated crash for testing")
+            }) {
+                Text("Generate Crash")
+            }.padding()
+
+            Button(action: {
+                self.isShowingMailView.toggle()
+            }) {
+                Text("Export Crash Report via Email")
+            }
+            .disabled(!MFMailComposeViewController.canSendMail())
+            .sheet(isPresented: $isShowingMailView) {
+                MailView(result: self.$result)
+            }
         }
-    }
+
+     }
 }
 
 struct ContentView_Previews: PreviewProvider {
