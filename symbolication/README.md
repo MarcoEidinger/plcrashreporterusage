@@ -71,3 +71,9 @@ See [here](https://www.apteligent.com/technical-resource/symbolicating-an-ios-cr
 
 For a good overview and details see [here](https://www.apteligent.com/technical-resource/symbolicating-an-ios-crash-report/)
 
+## Note: symbolicating on Linux
+
+Most of the tools are OSX specific so either 3rd party or custom ports are needed to be used.
+
+There is an unmaintained port for atos available on own risk: https://github.com/facebookarchive/atosl
+
