@@ -81,7 +81,9 @@ will provide the necessary result
 closure #1 in closure #1 in ContentView.body.getter (in plcrashreporterusage) (ContentView.swift:0)
 ```
 
-`TODO` **find out why line number is incorrect (missing)** as line number should be 20 in this example to match the symbolicated crash report which was downloaded from TestFlight. Could be related as optimization levels exist for Swift compiler 
+`ATTENTION` **line number is incorrect** as line number should be 20 in this example to match the symbolicated crash report which was downloaded from TestFlight. [This quirk](./quirks/README.md) will help to find out the correct number.
+
+Investigation still ongoing if this might be related due to optimization levels for Swift compiler or maybe some Swift closure related quirk.
 
 You can configure the Optimization Level option in the Xcode Build Settings under the Swift Compiler - Code Generation section.
 
@@ -150,6 +152,8 @@ Current executable set to '9d6b5e00-7246-317c-89bb-5f941e71b227.dSYM/Contents/Re
 Address: plcrashreporterusage[0x00000001000078a4] (plcrashreporterusage.__TEXT.__text + 8184)
 Summary: plcrashreporterusage` + 84 at ContentView.swift
 ```
+
+See [here](./quirks/README.md) how to find out the correct line number which caused the crash.
 
 More info: https://lldb.llvm.org/use/symbolication.html#
 
