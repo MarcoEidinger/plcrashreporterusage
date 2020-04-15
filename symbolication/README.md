@@ -6,6 +6,7 @@
 		- [Symbolicating with **lldb**](#symbolicating-with-lldb)
 		- [Symbolicating with **Dwarfdump**](#symbolicating-with-dwarfdump)
 	- [Note: symbolicating on Linux](#note-symbolicating-on-linux)
+	- [Note: symbolicating iOS system symbols](#note-symbolicating-ios-system-symbols)
 
 # Symbolicating Crash Reports
 
@@ -179,4 +180,59 @@ There is an unmaintained port for atos available on own risk: https://github.com
 
 Other option can be lldb (llvm) as it appears there is a proof record by [Sentry](https://blog.sentry.io/2017/04/11/ios-symbolication-troubles) with an own LLVM based symbolication library for Python
 
+## Note: symbolicating iOS system symbols
 
+ It is cumbersome to obtain iOS system symbols as Apple does not provide a symbol server. iOS system symbol files can be obtained from (previous) Xcode installations. 
+
+One brave OS contributor tries to collect all iOS system symbols: https://github.com/Zuikyo/iOS-System-Symbols
+
+Once iOS system symbol files (matching OS Version and CPU architecture of device) are obtained the same tooling is possible to symbolicate such related entry in the crash report.
+
+Example
+
+```
+34  libdyld.dylib                      0x00000001a2a30360 0x1a2a2f000 + 4960
+```
+
+To symbolicate this line we need the dynamic libary `libdyld.dylib`. I collected the file from /Users/\<UserName>/Library/Developer/Xcode/iOS DeviceSupport/13.3.1 (17D50)/Symbols/usr/lib folder and stored it in [./systemLibaries/libdyld.dylib](./systemSymbols/libdyld.dylib)
+
+We can use either atos to symbolicate
+
+```bash
+ atos -arch arm64 -o './systemSymbols/libdyld.dylib' -l 0x1a2a2f000 0x00000001a2a30360
+
+start (in libdyld.dylib) + 4
+```
+
+or other tools (like lldb)
+
+```bash
+# 1. get slide value:
+otool -arch arm64 -l ./systemSymbols/libdyld.dylib | grep __TEXT -m 2 -A 1 | grep vmaddr
+
+# result: vmaddr 0x0000000180293000
+
+# 2. calculate file address: (0x00000001a2a30360 - 0x1a2a2f000 + 0x0000000180293000 = 0x180294360)
+
+# 3. load executable in lldb
+lldb target create --arch arm64 ./systemSymbols/libdyld.dylib
+
+# Result: Current executable set to './systemSymbols/libdyld.dylib' (arm64).
+
+# 4. finally look up file address
+(lldb) image lookup -a 0x180294360
+      
+# Result
+
+# Address: libdyld.dylib[0x0000000180294360] (libdyld.dylib.__TEXT.__text + 4)
+# Summary: libdyld.dylib`start + 4
+
+```
+
+Another example for a **framework** (file not bundled in this repository)
+
+```
+atos -arch arm64 -o '/Users/<UserName>/Library/Developer/Xcode/iOS DeviceSupport/13.3.1 (17D50)/Symbols/System/Library/Frameworks/SwiftUI.framework/SwiftUI' -l 0x1d9493000 0x00000001d96073c4
+
+partial apply for PrimitiveButtonStyleConfiguration.trigger() (in SwiftUI) + 20
+```
