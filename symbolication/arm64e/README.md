@@ -22,14 +22,20 @@ The arm64e architecture is used on the A12(+) chipset, which is added in the lat
 
 arm64e is back compatible with arm64, i.e new devices can run applications built with older Xcode versions, for the generic arm64 iOS architecture.
 
-However, CPU architecture mattes! Especially when it comes to symbolicating iOS system symbols.
-
 Examples:
 - `arm64_1351.crash` is a crash report from arm64 device.
 - `arm64e_1351.crash` is a crash report from arm64e device.
 - both devices run on iOS 13.5.1
 
 Analysis:
+
+Official [Apple](https://developer.apple.com/documentation/security/preparing_your_app_to_work_with_pointer_authentication) documentation:
+
+> App Store Connect and Testflight don’t yet accept submissions with an arm64e slice. Xcode removes this slice from your app bundle when you upload it.
+
+Nevertheless, with Xcode 11.5 I was able to submit an iOS 13+ app with am64e slice to Testflight. Good news, the app dSYM architecture is still shown consistently as `arm64` 
+
+**So `arm64e` CPU architecture mattes only for iOS system symbols!**
 
 Let's have a look whats the result when trying to symbolicate either an iOS framework or an iOS dylib with the help of shell script `atosSymbolicationWithOriginalSymbols.sh`
 
@@ -90,7 +96,9 @@ start (in libdyld.dylib) + 4
 
 It is obvious that correct architecture instruction for atos is required as well as matching symbols.
 
-However, it is possible to merge iOS system symbols :)
+![](./arm64e_1351_crashreport.png)
+
+However, it is possible to [merge iOS system symbols](https://github.com/MarcoEidinger/iOS-System-Symbols-Utilities#merge-ios-system-symbols)
 
 I copied `arm64eSymbols` to `arm64e_and_arm64Symbols` and ran the following shell script command to merge arm64e and arm64 symbols
 
@@ -98,7 +106,7 @@ I copied `arm64eSymbols` to `arm64e_and_arm64Symbols` and ran the following shel
 sh ./iOS-System-Symbols/tools/merge_symbols.sh ./arm64e_and_arm64Symbols ./arm64Symbols
 ```
 
-I am able to verify with `atosSymbolicationWithMergedSymbols.sh` that merged symbols can be used to symbolicate crash report from either arm64 or arm64e device. But **correct architecture instruction for atos is still required**
+I am able to verify with `atosSymbolicationWithMergedSymbols.sh` that merged symbols can be used to symbolicate crash report from either arm64 or arm64e device. But **correct architecture instruction is still required** for symbolication
 
 Output
 
