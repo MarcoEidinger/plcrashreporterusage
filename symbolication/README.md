@@ -7,6 +7,7 @@
 		- [Symbolicating with **Dwarfdump**](#symbolicating-with-dwarfdump)
 	- [Note: symbolicating on Linux](#note-symbolicating-on-linux)
 	- [Note: symbolicating iOS system symbols](#note-symbolicating-ios-system-symbols)
+	- [Note: arm64e](#note-arm64e)
 
 # Symbolicating Crash Reports
 
@@ -236,3 +237,7 @@ atos -arch arm64 -o '/Users/<UserName>/Library/Developer/Xcode/iOS DeviceSupport
 
 partial apply for PrimitiveButtonStyleConfiguration.trigger() (in SwiftUI) + 20
 ```
+
+## Note: arm64e
+
+see [details](./arm64e)
