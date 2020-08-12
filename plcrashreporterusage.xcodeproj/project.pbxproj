@@ -3,11 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		0842DA03F824090705853790 /* Pods_plcrashreporterusage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C664F921609DFAA3E33E184B /* Pods_plcrashreporterusage.framework */; };
+		8A17AA2424E1F4A500ED8131 /* SAPFoundation.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A17AA2324E1F4A500ED8131 /* SAPFoundation.xcframework */; };
+		8A17AA2724E1F54F00ED8131 /* SAPCommon.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A17AA2624E1F54E00ED8131 /* SAPCommon.xcframework */; };
+		8A17AA2924E1F74D00ED8131 /* SAPCommon.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8A17AA2624E1F54E00ED8131 /* SAPCommon.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		8A17AA2A24E1F74D00ED8131 /* SAPFoundation.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8A17AA2324E1F4A500ED8131 /* SAPFoundation.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		8AC0F10E2422ED0100C19240 /* MailCrashReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC0F10D2422ED0100C19240 /* MailCrashReportView.swift */; };
 		8AF0930724228614008893DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF0930624228614008893DB /* AppDelegate.swift */; };
 		8AF0930924228614008893DB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF0930824228614008893DB /* SceneDelegate.swift */; };
@@ -15,10 +19,29 @@
 		8AF0930D24228616008893DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AF0930C24228616008893DB /* Assets.xcassets */; };
 		8AF0931024228616008893DB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AF0930F24228616008893DB /* Preview Assets.xcassets */; };
 		8AF0931324228616008893DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AF0931124228616008893DB /* LaunchScreen.storyboard */; };
+		8AF945E824E44C5200461276 /* UnstableAppApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF945E724E44C5200461276 /* UnstableAppApi.swift */; };
+		8AF945EA24E44EE400461276 /* ConfigurationLoaderHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF945E924E44EE400461276 /* ConfigurationLoaderHandler.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8A17AA2224E1F41500ED8131 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				8A17AA2924E1F74D00ED8131 /* SAPCommon.xcframework in Embed Frameworks */,
+				8A17AA2A24E1F74D00ED8131 /* SAPFoundation.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2E834EA950961B866A06750A /* Pods-plcrashreporterusage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-plcrashreporterusage.debug.xcconfig"; path = "Target Support Files/Pods-plcrashreporterusage/Pods-plcrashreporterusage.debug.xcconfig"; sourceTree = "<group>"; };
+		8A17AA2324E1F4A500ED8131 /* SAPFoundation.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SAPFoundation.xcframework; path = plcrashreporterusage/SAPFoundation.xcframework; sourceTree = "<group>"; };
+		8A17AA2624E1F54E00ED8131 /* SAPCommon.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SAPCommon.xcframework; path = plcrashreporterusage/SAPCommon.xcframework; sourceTree = "<group>"; };
 		8AC0F0DE242287F800C19240 /* plcrashreporterusage-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "plcrashreporterusage-Bridging-Header.h"; sourceTree = "<group>"; };
 		8AC0F10D2422ED0100C19240 /* MailCrashReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailCrashReportView.swift; sourceTree = "<group>"; };
 		8AF0930324228614008893DB /* plcrashreporterusage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = plcrashreporterusage.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -29,6 +52,8 @@
 		8AF0930F24228616008893DB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8AF0931224228616008893DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8AF0931424228616008893DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8AF945E724E44C5200461276 /* UnstableAppApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnstableAppApi.swift; sourceTree = "<group>"; };
+		8AF945E924E44EE400461276 /* ConfigurationLoaderHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationLoaderHandler.swift; sourceTree = "<group>"; };
 		B580F57A4596F358EDE4DE80 /* Pods-plcrashreporterusage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-plcrashreporterusage.release.xcconfig"; path = "Target Support Files/Pods-plcrashreporterusage/Pods-plcrashreporterusage.release.xcconfig"; sourceTree = "<group>"; };
 		C664F921609DFAA3E33E184B /* Pods_plcrashreporterusage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_plcrashreporterusage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -39,6 +64,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0842DA03F824090705853790 /* Pods_plcrashreporterusage.framework in Frameworks */,
+				8A17AA2724E1F54F00ED8131 /* SAPCommon.xcframework in Frameworks */,
+				8A17AA2424E1F4A500ED8131 /* SAPFoundation.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,6 +84,8 @@
 		6DEA7F47A88751D348EC1D36 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8A17AA2624E1F54E00ED8131 /* SAPCommon.xcframework */,
+				8A17AA2324E1F4A500ED8131 /* SAPFoundation.xcframework */,
 				C664F921609DFAA3E33E184B /* Pods_plcrashreporterusage.framework */,
 			);
 			name = Frameworks;
@@ -92,6 +121,8 @@
 				8AF0931424228616008893DB /* Info.plist */,
 				8AF0930E24228616008893DB /* Preview Content */,
 				8AC0F0DE242287F800C19240 /* plcrashreporterusage-Bridging-Header.h */,
+				8AF945E724E44C5200461276 /* UnstableAppApi.swift */,
+				8AF945E924E44EE400461276 /* ConfigurationLoaderHandler.swift */,
 			);
 			path = plcrashreporterusage;
 			sourceTree = "<group>";
@@ -115,6 +146,7 @@
 				8AF092FF24228614008893DB /* Sources */,
 				8AF0930024228614008893DB /* Frameworks */,
 				8AF0930124228614008893DB /* Resources */,
+				8A17AA2224E1F41500ED8131 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -206,6 +238,8 @@
 				8AF0930924228614008893DB /* SceneDelegate.swift in Sources */,
 				8AF0930B24228614008893DB /* ContentView.swift in Sources */,
 				8AC0F10E2422ED0100C19240 /* MailCrashReportView.swift in Sources */,
+				8AF945E824E44C5200461276 /* UnstableAppApi.swift in Sources */,
+				8AF945EA24E44EE400461276 /* ConfigurationLoaderHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,7 +307,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -327,7 +361,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -341,10 +375,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2E834EA950961B866A06750A /* Pods-plcrashreporterusage.debug.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"plcrashreporterusage/Preview Content\"";
 				DEVELOPMENT_TEAM = 6V66CC3AN6;
 				ENABLE_PREVIEWS = YES;
@@ -353,7 +388,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = us.eidinger.plcrashreporterusage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "plcrashreporterusage/plcrashreporterusage-Bridging-Header.h";
@@ -367,10 +402,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B580F57A4596F358EDE4DE80 /* Pods-plcrashreporterusage.release.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"plcrashreporterusage/Preview Content\"";
 				DEVELOPMENT_TEAM = 6V66CC3AN6;
 				ENABLE_PREVIEWS = YES;
@@ -379,7 +415,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = us.eidinger.plcrashreporterusage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "plcrashreporterusage/plcrashreporterusage-Bridging-Header.h";
