@@ -14,6 +14,8 @@ struct ContentView: View {
     @State var result: Result<MFMailComposeResult, Error>? = nil
     @State var isShowingMailView = false
 
+    let appVersionString: String = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
+
     private var unstableApi = UnstableAppApi()
     private var handler: ConfigurationLoaderHandler = ConfigurationLoaderHandler()
 
@@ -71,6 +73,8 @@ struct ContentView: View {
                     }
                 }.padding()
 
+                Text(appVersionString)
+                    .padding()
 
                 Button(action: {
                     self.isShowingMailView.toggle()
